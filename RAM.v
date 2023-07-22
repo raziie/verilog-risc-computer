@@ -1,0 +1,78 @@
+module memory(output reg [7:0] data_out,input [4:0] address,input [7:0] data_in,input write);
+
+reg [7:0] memory [0:31];
+
+initial begin 
+	memory[0] = 8'b00000000; //0
+	memory[1] = 8'b11010010; //-46
+	memory[2] = 8'b01010101; //85
+	memory[3] = 8'b00000000; //0
+	memory[4] = 8'b11111000; //-8
+	memory[5] = 8'b00010010; //18
+	memory[6] = 8'b01101110; //110
+	memory[7] = 8'b10000010; //-126
+	memory[8] = 8'b00110101; //53
+	memory[9] = 8'b01001010; //74
+	memory[10] = 8'b11001011; //-53
+	memory[11] = 8'b00010011; //19
+	memory[12] = 8'b01100110; //102
+	memory[13] = 8'b10001001; //-119
+	memory[14] = 8'b01011111; //95
+	memory[15] = 8'b01010011; //83
+	memory[16] = 8'b00000111; //7
+	memory[17] = 8'b10011111; //-97
+	memory[18] = 8'b01001100; //76
+	memory[19] = 8'b11110000; //-16
+	memory[20] = 8'b00000001; //1
+	memory[21] = 8'b00110100; //52
+	memory[22] = 8'b00110010; //50
+	memory[23] = 8'b00111100; //60
+	memory[24] = 8'b00011001; //25
+	memory[25] = 8'b10110101; //-75
+	memory[26] = 8'b00000101; //5
+	memory[27] = 8'b00001001; //9
+	memory[28] = 8'b01100111; //103
+	memory[29] = 8'b10100111; //-89
+	memory[30] = 8'b01110010; //114
+	memory[31] = 8'b00001011; //11
+end
+
+always @(*)
+begin
+	if (write) memory[address] <= data_in;
+	else data_out <= memory[address];	
+end
+
+endmodule
+
+module memory_tb;
+reg [7:0] data_in;
+reg [4:0] address, write;
+wire [7:0] data_out;
+
+memory dut (data_out, address, data_in, write);
+
+initial begin
+  address = 0;
+  data_in = 0;
+  write = 0;
+
+  #10 write = 1;
+  #10 address = 1;
+  #10 data_in = 8;
+
+  #10 write = 0;
+
+  #10 address = 1;
+
+  #10 write = 1;
+  #10 address = 2;
+  #10 data_in = 16;
+
+  #10 write = 0;
+
+  #10 address = 2;
+end
+
+endmodule
+

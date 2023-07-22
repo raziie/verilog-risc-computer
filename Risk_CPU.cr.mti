@@ -1,0 +1,88 @@
+{C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/ROM.v} {1 {vlog -work work -vopt -stats=none {C:\Users\user\Desktop\University\Sem4012\Computer Architecture\Project\ROM.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module ROM
+
+Top level modules:
+	ROM
+
+} {} {}} {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/data_path.v} {1 {vlog -work work -vopt -stats=none {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/data_path.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module Data_Path
+
+Top level modules:
+	Data_Path
+
+} {} {}} {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/decoder_3_8.v} {1 {vlog -work work -vopt -stats=none {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/decoder_3_8.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module decoder_3_8
+-- Compiling module decoder_tb
+
+Top level modules:
+	decoder_tb
+
+} {} {}} {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/RAM.v} {1 {vlog -work work -vopt -stats=none {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/RAM.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module memory
+-- Compiling module memory_tb
+
+Top level modules:
+	memory_tb
+
+} {} {}} {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/sequence_counter.v} {1 {vlog -work work -vopt -stats=none {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/sequence_counter.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module decoder
+-- Compiling module counter
+-- Compiling module sequencer
+-- Compiling module test_counter
+
+Top level modules:
+	test_counter
+
+} {} {}} {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/Risk_CPU.v} {1 {vlog -work work -vopt -stats=none {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/Risk_CPU.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module CPU
+-- Compiling module CPU_tb
+
+Top level modules:
+	CPU_tb
+
+} {} {}} {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/pent_register.v} {1 {vlog -work work -vopt -stats=none {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/pent_register.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module pent_register
+-- Compiling module pent_reg_tb
+
+Top level modules:
+	pent_reg_tb
+
+} {} {}} {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/bus_manager.v} {1 {vlog -work work -vopt -stats=none {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/bus_manager.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module bus_manager
+-- Compiling module bus_manager_test
+
+Top level modules:
+	bus_manager_test
+
+} {} {}} {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/control_unit.v} {1 {vlog -work work -vopt -stats=none {C:\Users\user\Desktop\University\Sem4012\Computer Architecture\Project\control_unit.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module Control_Unit
+
+Top level modules:
+	Control_Unit
+
+} {} {}} {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/oct_register.v} {1 {vlog -work work -vopt -stats=none {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/oct_register.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module oct_register
+-- Compiling module reg_tb
+
+Top level modules:
+	reg_tb
+
+} {} {}} {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/ALU.v} {1 {vlog -work work -vopt -stats=none {C:/Users/user/Desktop/University/Sem4012/Computer Architecture/Project/ALU.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module ALU
+-- Compiling module ALU_test
+
+Top level modules:
+	ALU_test
+
+} {} {}}

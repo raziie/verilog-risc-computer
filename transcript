@@ -1,0 +1,95 @@
+# Compile of sequence_counter.v was successful.
+# Compile of temp.v was successful.
+# Compile of RAM.v was successful.
+# Compile of ALU.v was successful.
+# Compile of bus_8bit.v was successful.
+# Compile of bus_manager.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of data_path.v was successful.
+# Compile of decoder_3_8.v was successful.
+# Compile of oct_register.v was successful.
+# Compile of pent_register.v was successful.
+# 11 compiles, 0 failed with no errors.
+vsim -gui work.CPU_tb
+# vsim -gui work.CPU_tb 
+# Start time: 21:50:12 on Jul 05,2023
+# Refreshing G:/lessons/4th term/computer architecture/project/CA_project/work.CPU_tb
+# ** Error (suppressible): (vlog-12110) The -novopt option has no effect on this product. -novopt option is now deprecated and will be removed in future releases.
+# ** Error: vlog failed.
+# subinvocation of vlog failed; return status = 1.
+# ** Error: (vsim-3171) Could not find machine code for 'G:/lessons/4th term/computer architecture/project/CA_project/work.CPU_tb'.
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 21:50:12 on Jul 05,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 2
+vsim -gui work.CPU_tb
+# vsim -gui work.CPU_tb 
+# Start time: 21:50:32 on Jul 05,2023
+# Refreshing G:/lessons/4th term/computer architecture/project/CA_project/work.CPU_tb
+# ** Error (suppressible): (vlog-12110) The -novopt option has no effect on this product. -novopt option is now deprecated and will be removed in future releases.
+# ** Error: vlog failed.
+# subinvocation of vlog failed; return status = 1.
+# ** Error: (vsim-3171) Could not find machine code for 'G:/lessons/4th term/computer architecture/project/CA_project/work.CPU_tb'.
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 21:50:33 on Jul 05,2023, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 1
+# Compile of sequence_counter.v was successful.
+# Compile of temp.v was successful.
+# Compile of RAM.v was successful.
+# Compile of ALU.v was successful.
+# Compile of bus_8bit.v was successful.
+# Compile of bus_manager.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of data_path.v was successful.
+# Compile of decoder_3_8.v was successful.
+# Compile of oct_register.v was successful.
+# Compile of pent_register.v was successful.
+# Compile of Risk_CPU.v was successful.
+# Compile of ROM.v was successful.
+# 13 compiles, 0 failed with no errors.
+vsim -gui work.CPU_tb
+# vsim -gui work.CPU_tb 
+# Start time: 21:53:06 on Jul 05,2023
+# Loading work.CPU_tb
+# Loading work.CPU
+# Loading work.Data_Path
+# Loading work.memory
+# Loading work.ROM
+# Loading work.ALU
+# Loading work.bus_manager
+# Loading work.oct_register
+# Loading work.pent_register
+# Loading work.Control_Unit
+# Loading work.sequencer
+# Loading work.counter
+# Loading work.decoder
+# Loading work.decoder_3_8
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (8) for port 'out'. The port definition is at: G:/lessons/4th term/computer architecture/project/CA_project/pent_register.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/datapath/PC File: G:/lessons/4th term/computer architecture/project/CA_project/data_path.v Line: 66
+# Trace back: Error QStructure::sort: invalid command name ""
+#   <6:C:/mtitcl/vsim/qstructure.tc_:2478: ::QStructure::sort .main_pane.structure 0 ascending
+#   <5:eval:1: ::QStructure::structsort .main_pane.structure 0 ascending
+#   <4:eval:1: ::namespace inscope ::QStructure {structsort .main_pane.structure} 0 ascending
+#   >3:proc:26: ::.main_pane.structure.interior.cs.body.struct sort 0 ascending
+#   >2:proc:10: ::.main_pane.structure.interior.cs.body.struct _initializeSortColumn
+#   <1:eval:1: ::namespace inscope ::vsimwidgets::Hierarchy {::.main_pane.structure.interior.cs.body.struct _initializeSortColumn}
+add wave sim:/CPU_tb/*
+run
+run
+# Compile of sequence_counter.v was successful.
+# Compile of temp.v was successful.
+# Compile of RAM.v was successful.
+# Compile of ALU.v was successful.
+# Compile of bus_8bit.v was successful.
+# Compile of bus_manager.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of data_path.v was successful.
+# Compile of decoder_3_8.v was successful.
+# Compile of oct_register.v was successful.
+# Compile of pent_register.v was successful.
+# Compile of Risk_CPU.v was successful.
+# Compile of ROM.v was successful.
+# 13 compiles, 0 failed with no errors.
+# End time: 23:44:15 on Jul 05,2023, Elapsed time: 1:51:09
+# Errors: 0, Warnings: 6

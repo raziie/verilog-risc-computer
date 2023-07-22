@@ -1,0 +1,13 @@
+{G:/lessons/4th term/computer architecture/project/CA_project/RAM.v} {1 {vlog -work work -stats=none {G:\lessons\4th term\computer architecture\project\CA_project\RAM.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+
+} {} {}} {G:/lessons/4th term/computer architecture/project/CA_project/temp.v} {1 {vlog -work work -stats=none {G:\lessons\4th term\computer architecture\project\CA_project\temp.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MUX
+-- Compiling module register
+
+Top level modules:
+	MUX
+	register
+
+} {} {}}

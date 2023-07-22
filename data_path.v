@@ -1,0 +1,68 @@
+module Data_Path(input clk, input R, input [15:0] T, input [7:0] D, input [63:0] in_bus, output [7:0] out_bus, output wire carry_flag);
+
+wire [7:0] x;
+wire load_dr, load_ac, load_ir, load_pc, load_ar;
+wire inc_dr, inc_ac, inc_ir, inc_pc, inc_ar;
+wire res_dr, res_ac, res_ir, res_pc, res_ar;
+wire write;
+
+wire [4:0] out_ar;
+wire [7:0] out_dr;
+wire [7:0] out_ac;
+wire [7:0] in_ac;
+
+
+assign in_bus[23:16]=out_dr;
+assign in_bus[31:24]=out_ac;
+assign in_bus[4:0]=out_ar;
+
+assign x[0] = 0;										 	//AR
+assign x[1] = T[0]; 										 	//PC
+assign x[2] = 0; 										 	//DR
+assign x[3] = (T[3]&D[5])|(T[5]&D[6]); 								 	//AC
+assign x[4] = T[2]; 										 	//IR
+assign x[5] = (T[3]&D[0])|(T[3]&D[1])|(T[3]&D[2])|(T[3]&D[3])|(T[3]&D[4])|(T[3]&D[6])|(T[3]&D[7]);      //RAM
+assign x[6] = T[1]; 											//ROM
+assign x[7] = (T[5]&D[7])|(T[11]&D[7]); 								//TR
+
+assign load_ar=T[0] | T[2];
+assign inc_ar=1'bx;
+assign res_ar=R&T[15];
+
+assign load_pc=1'bx;
+assign inc_pc=T[1];
+assign res_pc=R&T[15];
+
+assign load_dr=(T[3]&D[0])|(T[3]&D[1])|(T[3]&D[2])|(T[3]&D[3])|(T[3]&D[4])|(T[3]&D[6])|(T[5]&D[7])|(T[3]&D[7]);
+assign inc_dr=(T[8]&D[7])|(T[9]&D[7]);
+assign res_dr=R&T[15];
+
+assign load_ac=(T[4]&D[0])|(T[4]&D[1])|(T[4]&D[2])|(T[4]&D[3])|(T[4]&D[6])|(T[4]&D[4])|(T[4]&D[7])|(T[6]&D[7]);
+assign inc_ac=1'bx;
+assign res_ac=R&T[15];
+
+assign load_ir=T[1];
+assign inc_ir=1'bx;
+assign res_ir=R&T[15];
+
+assign load_tr=1'bx;
+assign inc_tr=(T[4]&D[7])|(T[8]&D[7]);
+assign res_tr=(R&T[15])|(T[3]&D[7]);
+
+assign write=(T[3]&D[5])|(T[5]&D[6])|(T[11]&D[7]);
+
+memory main_memory (in_bus[47:40], out_ar, out_bus, write);
+ROM rom(out_ar,in_bus[55:48]);
+
+
+ALU alu({T[6],T[4]},in_bus[39:37], out_ac, out_dr, in_ac, carry_flag);
+
+bus_manager bus_manager(x, in_bus, out_bus);
+
+oct_register DR(out_bus,out_dr,load_dr,inc_dr,res_dr,clk);
+oct_register AC(in_ac,out_ac,load_ac,inc_ac,res_ac,clk);
+oct_register IR(out_bus,in_bus[39:32],load_ir,inc_ir,res_ir,clk);
+oct_register TR(out_bus,in_bus[63:56],load_tr,inc_tr,res_tr,clk);
+pent_register PC(out_bus[4:0],in_bus[15:8],load_pc,inc_pc,res_pc,clk);
+pent_register AR(out_bus[4:0],out_ar,load_ar,inc_ar,res_ar,clk);
+endmodule

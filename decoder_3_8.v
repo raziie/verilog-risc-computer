@@ -1,0 +1,33 @@
+module decoder_3_8(en,x,y,z,out);
+
+input en,x,y,z;
+output [7:0] out;
+
+wire notx,noty,notz;
+
+not n1(notx,x),
+    n2(noty,y),
+    n3(notz,z);
+
+and g0(out[0],en,notx,noty,notz),
+    g1(out[1],en,notx,noty,z),
+    g2(out[2],en,notx,y,notz),
+    g3(out[3],en,notx,y,z),
+    g4(out[4],en,x,noty,notz),
+    g5(out[5],en,x,noty,z),
+    g6(out[6],en,x,y,notz),
+    g7(out[7],en,x,y,z);
+
+endmodule
+
+module decoder_tb;
+reg en,x,y,z;
+wire [7:0] out;
+decoder_3_8 dc(en,x,y,z,out);
+initial
+    begin
+	{en,x,y,z}=4'b0000;
+	repeat(15)
+	#10 {en,x,y,z}={en,x,y,z}+4'b0001;
+    end
+endmodule
